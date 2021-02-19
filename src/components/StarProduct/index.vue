@@ -37,7 +37,7 @@ export default {
         ]
       },
       rowBg: ['red', 'green'],
-      duration: 2000
+      duration: 3000
     }
   },
   computed: {

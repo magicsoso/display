@@ -93,7 +93,6 @@ export default {
   },
   computed: {
     chartOption () {
-      console.log(this.$store.state.flowDirection)
       const flowData = this.$store.state.flowDirection
       const scatterData = this.genScatterData(flowData)
       flowOpt.geo.data = flowData

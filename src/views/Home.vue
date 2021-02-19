@@ -72,7 +72,7 @@ export default {
     this.$store.dispatch('updateAll')
     setInterval(() => { // 更新数据的间隔时间
       this.$store.dispatch('updateAll')
-    }, 2 * 1000)
+    }, 5 * 3600 * 1000)
   }
 }
 </script>
