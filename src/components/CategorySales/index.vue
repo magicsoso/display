@@ -1,6 +1,6 @@
 <template>
   <box>
-    <vue-echarts :options="chartOption" ref="myChart" />
+    <vue-echarts :options="chartOption" />
   </box>
 </template>
 <script>
@@ -43,10 +43,7 @@ export default {
     chartOption () {
       const categorySales = this.$store.state.categorySales
       categoryOpt.series[0].data = categorySales
-      if (this.$refs.myChart && this.$refs.myChart.chart) {
-        this.$refs.myChart.setChartOption(categoryOpt)
-      }
-      return categoryOpt
+      return Object.assign({}, categoryOpt)
     }
   }
 }

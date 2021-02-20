@@ -3,13 +3,13 @@
     <div class="completion">
       <div class="part">
         <div class="chart">
-          <vue-echarts :options="chartOption[0]" ref="myChart1" />
+          <vue-echarts :options="chartOption[0]" />
         </div>
         <div class="title">销售额完成率</div>
       </div>
       <div class="part">
         <div class="chart">
-          <vue-echarts :options="chartOption[1]" ref="myChart2" />
+          <vue-echarts :options="chartOption[1]" />
         </div>
         <div class="title">订单量完成率</div>
       </div>
@@ -90,14 +90,7 @@ export default {
           name: '未完成'
         }
       ]
-      if (this.$refs.myChart1 && this.$refs.myChart1.chart) {
-        this.$refs.myChart1.setChartOption(chartOpt1)
-      }
-
-      if (this.$refs.myChart2 && this.$refs.myChart2.chart) {
-        this.$refs.myChart2.setChartOption(chartOpt2)
-      }
-      return [chartOpt1, chartOpt2]
+      return [Object.assign({}, chartOpt1), Object.assign({}, chartOpt2)]
     }
   }
 }

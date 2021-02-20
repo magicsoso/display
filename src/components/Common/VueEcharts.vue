@@ -13,17 +13,19 @@ export default {
       required: true
     }
   },
+  watch: {
+    options (newValue, oldValue) {
+      if (this.chart && newValue) {
+        this.chart.setOption(newValue)
+      }
+    }
+  },
   methods: {
     init (opt) {
       if (!this.chart) {
         this.chart = echarts.init(this.$el)
       }
       this.chart.setOption(this.options)
-    },
-    setChartOption (opt) {
-      if (this.chart && opt) {
-        this.chart.setOption(opt)
-      }
     }
   },
   mounted () {

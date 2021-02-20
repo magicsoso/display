@@ -1,7 +1,7 @@
 <template>
   <box>
     <div v-if="!ready">loading map...</div>
-    <vue-echarts v-else :options="chartOption" ref="myChart" />
+    <vue-echarts v-else :options="chartOption" />
   </box>
 </template>
 <script>
@@ -98,10 +98,7 @@ export default {
       flowOpt.geo.data = flowData
       flowOpt.series[0].data = flowData
       flowOpt.series[1].data = scatterData
-      if (this.$refs.myChart && this.$refs.myChart.chart) {
-        this.$refs.myChart.setChartOption(flowOpt)
-      }
-      return flowOpt
+      return Object.assign({}, flowOpt)
     }
   },
   created () {

@@ -1,6 +1,6 @@
 <template>
   <box>
-    <vue-echarts :options="chartOption" ref="myChart"/>
+    <vue-echarts :options="chartOption" />
   </box>
 </template>
 <script>
@@ -98,10 +98,7 @@ export default {
       annualOpt.xAxis.data = year
       annualOpt.series[0].data = spring
       annualOpt.series[1].data = fall
-      if (this.$refs.myChart && this.$refs.myChart.chart) {
-        this.$refs.myChart.setChartOption(annualOpt)
-      }
-      return annualOpt
+      return Object.assign({}, annualOpt)
     }
   }
 }
