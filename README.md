@@ -3,8 +3,6 @@
 
 基于vue2和echarts5的数据大屏案例
 
-# display
-
 ## Project setup
 ```
 npm install
